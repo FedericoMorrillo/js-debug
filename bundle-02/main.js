@@ -94,6 +94,7 @@
 // }
 // checkAccess();
 // in questo caso i valori booleani sono considerati stringhe quindi c'è un errore di sintassi perchè sono scritti nelle "''"
+//CORREZIONE
 // function checkAccess() {
 //   const addresses = [
 //     "mymail@mail.com",
@@ -117,8 +118,7 @@
 // }
 // checkAccess();
 
-
- // ESERCIZIO 5 (suggerimento: c'è un solo errore)
+// ESERCIZIO 5 (suggerimento: c'è un solo errore)
 //  function checkAccessImproved() {
 //      const addresses = ['mymail@mail.com', 'yourmail@mail.com', 'hermail@mail.com', 'hismail@mail.com'];
 
@@ -143,34 +143,37 @@
 //         } else {
 //             console.log('Accesso negato!');
 //          }
-//     }   
+//     }
 //  checkAccessImproved();
- //l errore di questo codice è di sintassi la funzione non è stata chiusa 
- //CORREZIONE
-//  function checkAccessImproved() {
-//     const addresses = ['mymail@mail.com', 'yourmail@mail.com', 'hermail@mail.com', 'hismail@mail.com'];
+//l errore di questo codice è di sintassi la funzione non è stata chiusa
+// i valori booleani sono sempre delle stringhe
+// i console log sono dentro il for ripetendo la stampa più volte
+//CORREZIONE
+function checkAccessImproved() {
+  const addresses = [
+    "mymail@mail.com",
+    "yourmail@mail.com",
+    "hermail@mail.com",
+    "hismail@mail.com",
+  ];
 
-//     const userEmail = prompt('Inserisci il tuo indirizzo email');
+  const userEmail = prompt("Inserisci il tuo indirizzo email");
 
-//     let grantAccess = 'false';
+  let grantAccess = false;
 
-//    for (let i = 0; i < addresses.length; i++) {
-//        const email = addresses[i];
+  for (let i = 0; i < addresses.length; i++) {
+    const email = addresses[i];
 
-//        if (userEmail.length > 5) {
-
-//            if (email === userEmail) {
-//                grantAccess = 'true';
-
-//            }
-
-//         }
-
-//        if (grantAccess) {
-//            console.log('Accesso consentito!');
-//        } else {
-//            console.log('Accesso negato!');
-//         }
-//    }
-// }   
-// checkAccessImproved();
+    if (userEmail.length > 5) {
+      if (email === userEmail) {
+        grantAccess = true;
+      }
+    }
+  }
+  if (grantAccess) {
+    console.log("Accesso consentito!");
+  } else {
+    console.log("Accesso negato!");
+  }
+}
+checkAccessImproved();
